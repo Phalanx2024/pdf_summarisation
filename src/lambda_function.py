@@ -7,7 +7,7 @@ logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
     """
-    AWS Lambda function handler.
+    AWS PDF Summarisation Lambda function handler.
 
     Args:
         event: The event dict containing request data
