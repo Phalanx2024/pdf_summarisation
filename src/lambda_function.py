@@ -28,7 +28,6 @@ def lambda_handler(event, context):
         except json.JSONDecodeError:
             return {
                 "statusCode": 400,
-                "headers": {"Content-Type": "application/json"},
                 "body": json.dumps({"error_message": "Invalid JSON body"})
             }
 
@@ -44,7 +43,6 @@ def lambda_handler(event, context):
     return {
         "statusCode": 200,
         "headers": {
-            "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
         },
         "body": json.dumps(response_body)
