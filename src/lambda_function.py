@@ -18,8 +18,6 @@ def lambda_handler(event, context):
     """
     logger.info(f"Received event: {json.dumps(event)}")
 
-    # Extract query parameters or body
-    http_method = event.get("httpMethod", "GET")
     body = event.get("body")
     query_params = event.get("queryStringParameters") or {}
 
