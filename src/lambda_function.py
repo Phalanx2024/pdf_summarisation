@@ -29,14 +29,14 @@ def lambda_handler(event, context):
             return {
                 "statusCode": 400,
                 "headers": {"Content-Type": "application/json"},
-                "body": json.dumps({"error": "Invalid JSON body"})
+                "body": json.dumps({"error_message": "Invalid JSON body"})
             }
 
     # Example business logic
     name = query_params.get("name") or (body.get("name") if body else None) or "World"
 
     response_body = {
-        "message": f"Hello, {name}!",
+        "message": f"Hello, python user {name}!",
         "method": http_method,
         "requestId": context.aws_request_id if context else "local"
     }
